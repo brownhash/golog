@@ -24,21 +24,21 @@ func isDebugLog(logLevel string) bool {
 }
 
 func isInfoLog(logLevel string) bool {
-	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "INFO" || logLevel == "20" || logLevel == "" {
+	if isDebugLog(logLevel) || logLevel == "INFO" || logLevel == "20" {
 		return true
 	}
 	return false
 }
 
 func isWarnLog(logLevel string) bool {
-	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "INFO" || logLevel == "20" || logLevel == "WARN" || logLevel == "30" || logLevel == "" {
+	if isInfoLog(logLevel) || logLevel == "WARN" || logLevel == "30" {
 		return true
 	}
 	return false
 }
 
 func isErrorLog(logLevel string) bool {
-	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "INFO" || logLevel == "20" || logLevel == "WARN" || logLevel == "30" || logLevel == "ERROR" || logLevel == "40" || logLevel == "" {
+	if isWarnLog(logLevel) || logLevel == "ERROR" || logLevel == "40" {
 		return true
 	}
 	return false
