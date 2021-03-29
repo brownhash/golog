@@ -40,6 +40,13 @@ func isWarnLog(logLevel string) bool {
 	return false
 }
 
+func isSuccessLog(logLevel string) bool {
+	if isWarnLog(logLevel) || logLevel == "SUCCESS" || logLevel == "30" {
+		return true
+	}
+	return false
+}
+
 func isErrorLog(logLevel string) bool {
 	if isWarnLog(logLevel) || logLevel == "ERROR" || logLevel == "40" {
 		return true
