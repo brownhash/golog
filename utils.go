@@ -2,6 +2,7 @@ package golog
 
 import (
 	"os"
+	"log"
 )
 
 var envPropName string = "GOLOG_LOGGING_LEVEL"
