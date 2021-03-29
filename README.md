@@ -84,6 +84,8 @@ golog.Error("log message")
 golog.Errorf("log message")
 ```
 
+> Exits with status 1
+
 ### Log format
 
 To set log format to - `<date> <time> <log>`
