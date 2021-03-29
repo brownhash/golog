@@ -92,6 +92,8 @@ golog.Errorf("log message")
 http.ListenAndServe("127.0.0.1:8080", golog.LogRequest(http.DefaultServeMux))
 ```
 
+> Works as log handler
+
 ### Log format
 
 To set log format to - `<date> <time> <log>`
