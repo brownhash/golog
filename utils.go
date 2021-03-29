@@ -61,7 +61,7 @@ func SetLogFormat() {
 }
 
 // SetEmptyLogFormat - unset the log format
-func SetEmptyLogFormat() {
+func UnsetLogFormat() {
 	log.SetFlags(0)
 }
 
