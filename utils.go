@@ -25,6 +25,7 @@ func isDebugLog(logLevel string) bool {
 	return false
 }
 
+// default logging level
 func isInfoLog(logLevel string) bool {
 	if isDebugLog(logLevel) || logLevel == "INFO" || logLevel == "20" || logLevel == "" {
 		return true
