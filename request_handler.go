@@ -8,6 +8,8 @@ import (
 
 // LogRequest - log http requests
 func LogRequest(handler http.Handler) http.Handler {
+	SetLogFormat()
+	
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		formatter := fmt.Sprintf("%s %s", fmt.Sprintf(SuccessColor, r.Method), fmt.Sprintf(DebugColor, r.URL))
 		log.Printf(formatter)
