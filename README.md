@@ -30,3 +30,15 @@ Available logging levels -
 4. ERROR | 40
 
 > Note: The above logging levels are in decreasing order of their precedence. i.e. DEBUG / 10 will allow all loggers to log, while ERROR / 40 wont allow any other than itself.
+
+### Logging
+
+#### Debug (DEBUG / 10)
+
+```go
+golog.Debug("log message")
+```
+
+```go
+golog.Debugf("log message")
+```
