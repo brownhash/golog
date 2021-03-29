@@ -8,6 +8,7 @@ import (
 
 // Debug - log debugging messages
 func Debug(message interface{}) {
+	SetLogFormat()
 	var fileInfo string = ""
 
 	_, file, lineNum, ok := runtime.Caller(1)
@@ -24,6 +25,7 @@ func Debug(message interface{}) {
 
 // Info - log informative messages
 func Info(message interface{}) {
+	SetLogFormat()
 	if isInfoLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(InfoColor, message)
 		log.Println(formatter)
@@ -32,6 +34,7 @@ func Info(message interface{}) {
 
 // Warn - log warning messages
 func Warn(message interface{}) {
+	SetLogFormat()
 	if isWarnLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(WarningColor, message)
 		log.Println(formatter)
@@ -40,6 +43,7 @@ func Warn(message interface{}) {
 
 // Success - log success messages
 func Success(message interface{}) {
+	SetLogFormat()
 	if isSuccessLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(SuccessColor, message)
 		log.Println(formatter)
@@ -48,6 +52,7 @@ func Success(message interface{}) {
 
 // Error - log error messages
 func Error(message interface{}) {
+	SetLogFormat()
 	if isErrorLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(ErrorColor, message)
 		log.Fatal(formatter)
