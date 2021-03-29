@@ -16,6 +16,34 @@ func GetLogLevel() string {
 	return os.Getenv("GOLOG_LOGGING_LEVEL")
 }
 
+func isDebugLog(logLevel string) bool {
+	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "" {
+		return true
+	}
+	return false
+}
+
+func isInfoLog(logLevel string) bool {
+	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "INFO" || logLevel == "20" || logLevel == "" {
+		return true
+	}
+	return false
+}
+
+func isWarnLog(logLevel string) bool {
+	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "INFO" || logLevel == "20" || logLevel == "WARN" || logLevel == "30" || logLevel == "" {
+		return true
+	}
+	return false
+}
+
+func isErrorLog(logLevel string) bool {
+	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "INFO" || logLevel == "20" || logLevel == "WARN" || logLevel == "30" || logLevel == "ERROR" || logLevel == "40" || logLevel == "" {
+		return true
+	}
+	return false
+}
+
 /*
 To set logging levels, either use the above func SetLogLevel, or
 $ export GOLOG_LOGGING_LEVEL="<log level>"
