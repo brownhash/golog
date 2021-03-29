@@ -16,6 +16,12 @@ import "githib.com/sharma1612harshit/golog"
 golog.SetLogLevel("logLevel")
 ```
 
+or
+
+```shell
+$ export GOLOG_LOGGING_LEVEL="logLevel"
+```
+
 Available logging levels -
 
 1. DEBUG | 10
