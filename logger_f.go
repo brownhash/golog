@@ -16,7 +16,7 @@ func Debugf(message interface{}) {
 		fileInfo = fmt.Sprintf(SuccessColor, fmt.Sprintf("%s::%d", file, lineNum))
 	}
 
-	if GetLogLevel() == "DEBUG" || GetLogLevel() == "" {
+	if isDebugLog(GetLogLevel()) {
 		formatter := fmt.Sprintf("%s %s", fileInfo, fmt.Sprintf(DebugColor, message))
 		log.Printf(formatter)
 	}
@@ -24,7 +24,7 @@ func Debugf(message interface{}) {
 
 // Infof - log informative messages in same line
 func Infof(message interface{}) {
-	if GetLogLevel() == "DEBUG" || GetLogLevel() == "INFO" || GetLogLevel() == "" {
+	if isInfoLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(InfoColor, message)
 		log.Printf(formatter)
 	}
@@ -32,7 +32,7 @@ func Infof(message interface{}) {
 
 // Warnf - log warning messages in same line
 func Warnf(message interface{}) {
-	if GetLogLevel() == "DEBUG" || GetLogLevel() == "INFO" || GetLogLevel() == "WARN" || GetLogLevel() == "" {
+	if isWarnLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(WarningColor, message)
 		log.Printf(formatter)
 	}
@@ -40,7 +40,7 @@ func Warnf(message interface{}) {
 
 // Successf - log success messages in same line
 func Successf(message interface{}) {
-	if GetLogLevel() == "DEBUG" || GetLogLevel() == "INFO" || GetLogLevel() == "WARN" || GetLogLevel() == "" {
+	if isWarnLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(SuccessColor, message)
 		log.Printf(formatter)
 	}
@@ -48,7 +48,7 @@ func Successf(message interface{}) {
 
 // Errorf - log error messages in same line
 func Errorf(message interface{}) {
-	if GetLogLevel() == "DEBUG" || GetLogLevel() == "INFO" || GetLogLevel() == "WARN" || GetLogLevel() == "ERROR" || GetLogLevel() == "" {
+	if isErrorLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(ErrorColor, message)
 		log.Fatalf(formatter)
 	}
