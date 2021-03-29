@@ -4,27 +4,29 @@ import (
 	"os"
 )
 
+var envPropName string = "GOLOG_LOGGING_LEVEL"
+
 // SetLogLevel - set global logging level
 func SetLogLevel(logLevel string) {
-	if (logLevel != "DEBUG" && logLevel != "10") && (logLevel != "INFO" && logLevel != "20") && (logLevel != "WARN" && logLevel != "30") && (logLevel != "ERROR" && logLevel != "40") {
+	if !isDebugLog(logLevel) && !isInfoLog(logLevel) && !isWarnLog(logLevel) && !isErrorLog(logLevel) {
 		Error("Log level not recognised.")
 	}
-	_ = os.Setenv("GOLOG_LOGGING_LEVEL", logLevel)
+	_ = os.Setenv(envPropName, logLevel)
 }
 
 func GetLogLevel() string {
-	return os.Getenv("GOLOG_LOGGING_LEVEL")
+	return os.Getenv(envPropName)
 }
 
 func isDebugLog(logLevel string) bool {
-	if logLevel == "DEBUG" || logLevel == "10" || logLevel == "" {
+	if logLevel == "DEBUG" || logLevel == "10" {
 		return true
 	}
 	return false
 }
 
 func isInfoLog(logLevel string) bool {
-	if isDebugLog(logLevel) || logLevel == "INFO" || logLevel == "20" {
+	if isDebugLog(logLevel) || logLevel == "INFO" || logLevel == "20" || logLevel == "" {
 		return true
 	}
 	return false
