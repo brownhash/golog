@@ -13,7 +13,7 @@ func Debugf(message interface{}) {
 	_, file, lineNum, ok := runtime.Caller(1)
 
 	if ok {
-		fileInfo = fmt.Sprintf(SuccessColor, fmt.Sprintf("%s::%d", file, lineNum))
+		fileInfo = fmt.Sprintf(NoticeColor, fmt.Sprintf("%s::%d", file, lineNum))
 	}
 
 	if isDebugLog(GetLogLevel()) {
