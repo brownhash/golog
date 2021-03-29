@@ -40,7 +40,7 @@ func Warnf(message interface{}) {
 
 // Successf - log success messages in same line
 func Successf(message interface{}) {
-	if isWarnLog(GetLogLevel()) {
+	if isSuccessLog(GetLogLevel()) {
 		formatter := fmt.Sprintf(SuccessColor, message)
 		log.Printf(formatter)
 	}
