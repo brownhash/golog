@@ -17,3 +17,9 @@ func LogRequest(handler http.Handler) http.Handler {
 		handler.ServeHTTP(w, r)
 	})
 }
+
+/*
+Usage-
+
+http.ListenAndServe("127.0.0.1:8080", golog.LogRequest(http.DefaultServeMux))
+*/
