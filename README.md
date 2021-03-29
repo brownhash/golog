@@ -86,6 +86,12 @@ golog.Errorf("log message")
 
 > Exits with status 1
 
+#### LogRequest (request handler)
+
+```go
+http.ListenAndServe("127.0.0.1:8080", golog.LogRequest(http.DefaultServeMux))
+```
+
 ### Log format
 
 To set log format to - `<date> <time> <log>`
