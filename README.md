@@ -87,11 +87,13 @@ golog.Errorf("log message")
 ### Log format
 
 To set log format to - `<date> <time> <log>`
+
 ```go
 golog.SetLogFormat()
 ```
 
 To unset log format to - `<log>`
+
 ```go
 golog.UnsetLogFormat()
 ```
