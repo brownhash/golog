@@ -54,6 +54,16 @@ func isErrorLog(logLevel string) bool {
 	return false
 }
 
+// SetLogFormat - set the format in which logs are to be received
+func SetLogFormat() {
+	log.SetFlags(log.Ldate | log.Ltime)
+}
+
+// SetEmptyLogFormat - unset the log format
+func SetEmptyLogFormat() {
+	log.SetFlags()
+}
+
 /*
 To set logging levels, either use the above func SetLogLevel, or
 $ export GOLOG_LOGGING_LEVEL="<log level>"
