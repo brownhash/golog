@@ -53,3 +53,8 @@ func Error(message interface{}) {
 		log.Fatal(formatter)
 	}
 }
+
+// Println - print logs without any constraints
+func Error(message interface{}) {
+	log.Println(message)
+}
