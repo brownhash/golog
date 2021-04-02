@@ -55,6 +55,6 @@ func Error(message interface{}) {
 }
 
 // Println - print logs without any constraints
-func Error(message interface{}) {
+func Println(message interface{}) {
 	log.Println(message)
 }
