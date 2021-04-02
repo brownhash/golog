@@ -56,5 +56,6 @@ func Errorf(message interface{}) {
 
 // Printf - print logs without any constraints
 func Printf(message interface{}) {
-	log.Printf(message)
+	formatter := fmt.Sprintf(message)
+	log.Printf(formatter)
 }
