@@ -53,3 +53,8 @@ func Errorf(message interface{}) {
 		log.Fatalf(formatter)
 	}
 }
+
+// Printf - print logs without any constraints
+func Printf(message interface{}) {
+	log.Printf(message)
+}
