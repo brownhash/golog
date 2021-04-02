@@ -6,6 +6,10 @@ Efficient logging for Go
 
 ### Importing
 
+```shell
+$ go get -u github.com/sharma1612harshit/golog
+```
+
 ```go
 import "githib.com/sharma1612harshit/golog"
 ```
@@ -83,6 +87,16 @@ golog.Error("log message")
 ```go
 golog.Errorf("log message")
 ```
+
+> Exits with status 1
+
+### Request Logging
+
+```go
+http.ListenAndServe("127.0.0.1:8080", golog.LogRequest(http.DefaultServeMux))
+```
+
+> Works as log handler
 
 ### Log format
 
