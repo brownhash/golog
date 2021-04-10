@@ -11,7 +11,7 @@ $ go get -u github.com/sharma1612harshit/golog
 ```
 
 ```go
-import "githib.com/sharma1612harshit/golog"
+import "github.com/sharma1612harshit/golog"
 ```
 
 ### Setting logging-level
