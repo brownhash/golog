@@ -1,37 +1,113 @@
-## Welcome to GitHub Pages
+# golog
 
-You can use the [editor on GitHub](https://github.com/sharma1612harshit/golog/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Efficient logging for Go
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Usage
 
-### Markdown
+### Importing
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```shell
+$ go get -u github.com/sharma1612harshit/golog
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+```go
+import "githib.com/sharma1612harshit/golog"
+```
 
-### Jekyll Themes
+### Setting logging-level
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sharma1612harshit/golog/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```go
+golog.SetLogLevel("logLevel")
+```
 
-### Support or Contact
+or
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```shell
+$ export GOLOG_LOGGING_LEVEL="logLevel"
+```
+
+Available logging levels -
+
+1. DEBUG | 10
+2. INFO | 20
+3. WARN | 30
+4. SUCCESS | 30
+5. ERROR | 40
+
+> Note: The above logging levels are in decreasing order of their precedence. i.e. DEBUG / 10 will allow all loggers to log, while ERROR / 40 wont allow any other than itself.
+
+### Logging
+
+#### Debug (DEBUG / 10)
+
+```go
+golog.Debug("log message")
+```
+
+```go
+golog.Debugf("log message")
+```
+
+#### Info (INFO / 20)
+
+```go
+golog.Info("log message")
+```
+
+```go
+golog.Infof("log message")
+```
+
+#### Warn (WARN / 30)
+
+```go
+golog.Warn("log message")
+```
+
+```go
+golog.Warnf("log message")
+```
+
+#### Success (SUCCESS / 30)
+
+```go
+golog.Success("log message")
+```
+
+```go
+golog.Successf("log message")
+```
+
+#### Error (ERROR / 40)
+
+```go
+golog.Error("log message")
+```
+
+```go
+golog.Errorf("log message")
+```
+
+> Exits with status 1
+
+### Request Logging
+
+```go
+http.ListenAndServe("127.0.0.1:8080", golog.LogRequest(http.DefaultServeMux))
+```
+
+> Works as log handler
+
+### Log format
+
+To set log format to - `<date> <time> <log>`
+
+```go
+golog.SetLogFormat()
+```
+
+To unset log format to - `<log>`
+
+```go
+golog.UnsetLogFormat()
+```
