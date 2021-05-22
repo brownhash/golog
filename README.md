@@ -7,11 +7,11 @@ Efficient logging for Go
 ### Importing
 
 ```shell
-$ go get -u github.com/sharma1612harshit/golog
+$ go get -u github.com/brownhash/golog
 ```
 
 ```go
-import "github.com/sharma1612harshit/golog"
+import "github.com/brownhash/golog"
 ```
 
 ### Setting logging-level

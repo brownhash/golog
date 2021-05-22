@@ -1,3 +1,3 @@
-module github.com/sharma1612harshit/golog
+module github.com/brownhash/golog
 
 go 1.15
