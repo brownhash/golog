@@ -21,7 +21,7 @@ func GetLogLevel() string {
 }
 
 // LogToFile - print all logs in specified file
-func LogToFile(filepath string) {
+func LogToFile(filepath string) *os.File {
 	logfile, err := os.OpenFile(filepath, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
 	if err != nil {
 		Error(err)
@@ -29,7 +29,7 @@ func LogToFile(filepath string) {
 
 	log.SetOutput(logfile)
 
-	defer logfile.Close()
+	return logfile
 }
 
 func isDebugLog(logLevel string) bool {
