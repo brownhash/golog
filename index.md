@@ -7,11 +7,11 @@ Efficient logging for Go
 ### Importing
 
 ```shell
-$ go get -u github.com/sharma1612harshit/golog
+go get -u github.com/brownhash/golog
 ```
 
 ```go
-import "githib.com/sharma1612harshit/golog"
+import "github.com/brownhash/golog"
 ```
 
 ### Setting logging-level
@@ -23,7 +23,7 @@ golog.SetLogLevel("logLevel")
 or
 
 ```shell
-$ export GOLOG_LOGGING_LEVEL="logLevel"
+export GOLOG_LOGGING_LEVEL="logLevel"
 ```
 
 Available logging levels -
@@ -89,6 +89,16 @@ golog.Errorf("log message")
 ```
 
 > Exits with status 1
+
+### Log to file
+
+```go
+logfile := golog.LogToFile("filename.log")
+
+defer logfile.Close()
+```
+
+> Add this declaration before logging anything
 
 ### Request Logging
 
