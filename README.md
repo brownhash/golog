@@ -7,7 +7,7 @@ Efficient logging for Go
 ### Importing
 
 ```shell
-$ go get -u github.com/brownhash/golog
+go get -u github.com/brownhash/golog
 ```
 
 ```go
@@ -23,7 +23,7 @@ golog.SetLogLevel("logLevel")
 or
 
 ```shell
-$ export GOLOG_LOGGING_LEVEL="logLevel"
+export GOLOG_LOGGING_LEVEL="logLevel"
 ```
 
 Available logging levels -
