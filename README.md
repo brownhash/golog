@@ -93,7 +93,9 @@ golog.Errorf("log message")
 ### Log to file
 
 ```go
-golog.LogToFile("filename.log")
+logfile := golog.LogToFile("filename.log")
+
+defer logfile.Close()
 ```
 
 > Add this declaration before logging anything
