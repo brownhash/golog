@@ -21,7 +21,7 @@ func GetLogLevel() string {
 }
 
 // LogToFile - print all logs in specified file
-func LogToFile(filepath string, append bool) {
+func LogToFile(filepath string) {
 	logfile, err := os.OpenFile(filepath, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
 	if err != nil {
 		Error(err)
