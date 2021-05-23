@@ -90,6 +90,14 @@ golog.Errorf("log message")
 
 > Exits with status 1
 
+### Log to file
+
+```go
+golog.LogToFile("filename.log")
+```
+
+> Add this declaration before logging anything
+
 ### Request Logging
 
 ```go

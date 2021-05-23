@@ -15,8 +15,21 @@ func SetLogLevel(logLevel string) {
 	_ = os.Setenv(envPropName, logLevel)
 }
 
+// GetLogLevel - get globnal logging level
 func GetLogLevel() string {
 	return os.Getenv(envPropName)
+}
+
+// LogToFile - print all logs in specified file
+func LogToFile(filepath string, append bool) {
+	logfile, err := os.OpenFile(filepath, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+	if err != nil {
+		Error(err)
+	}
+
+	log.SetOutput(logfile)
+
+	defer logfile.Close()
 }
 
 func isDebugLog(logLevel string) bool {
