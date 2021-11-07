@@ -29,5 +29,6 @@ func TestLoggers(t *testing.T) {
 	// Print log
 	Println("Print log!")
 	Printf("Printf log!")
-	// do not call Error()
+
+	// do not call Error() or Errorf()
 }
